@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Auto GPC",
+  "version": "1.0.0",
+  "author": "WebIterate",
+  "homepage_url": "https://gpc-extension.webiterate.dev/",
+  "description": "Opt-out of data sharing and selling using GPC, universal opt-out mechanism recognized by CCPA and privacy laws.",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "script.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "gpc",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
