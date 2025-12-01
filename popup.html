@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto GPC - Scanner</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="icon-128.png" alt="Auto GPC Icon" class="icon">
+            <h1 class="title">Auto GPC</h1>
+        </header>
+
+        <div class="domain-section">
+            <label class="label">Current Domain</label>
+            <div class="domain" id="domain">Loading...</div>
+        </div>
+
+        <div class="status-section">
+            <div class="status-card" id="statusCard">
+                <div class="status-icon" id="statusIcon">
+                    <svg class="spinner" viewBox="0 0 50 50">
+                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                    </svg>
+                </div>
+                <div class="status-content">
+                    <h2 class="status-title" id="statusTitle">Scanning...</h2>
+                    <p class="status-message" id="statusMessage">Checking GPC support</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="https://gpc.webiterate.dev/" target="_blank" class="link">
+                    Test Your GPC Settings
+                </a>
+                <span class="separator">•</span>
+                <a href="#" id="gpcJsonLink" target="_blank" class="link">
+                    Open gpc.json
+                </a>
+            </div>
+        </footer>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>

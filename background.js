@@ -1,4 +1,6 @@
-// Handle extension icon click
-chrome.action.onClicked.addListener(() => {
-    chrome.tabs.create({ url: "https://gpc.webiterate.dev/" });
+// handle first run
+chrome.runtime.onInstalled.addListener((details) => {
+    if (details.reason === "install") {
+        chrome.tabs.create({ url: "https://gpc.webiterate.dev/" });
+    }
 });
